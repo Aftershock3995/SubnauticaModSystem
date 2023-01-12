@@ -1,7 +1,6 @@
-﻿using BepInEx.Logging;
+using BepInEx.Logging;
 using BepInEx;
 using HarmonyLib;
-using SolarPanelThingy;
 
 namespace Aftershock
 {
@@ -9,8 +8,8 @@ namespace Aftershock
     public class Main : BaseUnityPlugin
     {
         #region BEPINEX
-        private const string myGUID = "com.Aftershock3995";
-        private const string pluginName = "Solar_Panel_Plugin";
+        private const string myGUID = "AftershockPanel";
+        private const string pluginName = "com.Aftershock3995SolarPanel";
         private const string versionString = "1.0.0";
         private static readonly Harmony harmony = new Harmony(myGUID);
         internal static ManualLogSource logger;
@@ -21,7 +20,6 @@ namespace Aftershock
         {
             harmony.PatchAll();
             logger = Logger;
-            PluginConfig.Initialize(Config);
         }
     }
         //above is needed to make the mod work, who would have thought (trust me not me...)
@@ -36,8 +34,8 @@ namespace Aftershock
         internal static void Postfix(SolarPanel __instance)
         {
             __instance.maxDepth = 500f;
-            __instance.biomeSunlightScale = 1000f;
-        //setting what the new maxDepth and biomSunlightScale are
+            __instance.biomeSunlightScale = 500f;
+        //setting what the new maxDepth and biomeSunlightScale are
 
         //ErrorMessage.AddError($"DEPTH: {__instance.maxDepth} \nSCALE: {__instance.biomeSunlightScale}");   <----- for testing to see if the depth and scale are right
             
