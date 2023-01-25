@@ -1,0 +1,12 @@
+﻿{
+  "Id": "Knife Damage Mod.dll,
+  "DisplayName": "Knife Damage Mod",
+  "Author": "Aftershock",
+  "Version": "1.0.0",
+  "Enable": true,
+  "AssemblyName": "Knife Damage Mod",
+  "VersionDependencies": {
+    "SMLHelper": "2.14.1"
+  },
+  "Game": "Subnautica"
+}
